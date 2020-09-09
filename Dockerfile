@@ -1,4 +1,4 @@
-FROM kubedb/postgres:10.6-v2
+FROM kubedb/postgres:10.2-v2
 
 ENV POSTGIS_VERSION 2.5.1
 
