@@ -3,7 +3,6 @@ FROM kubedb/postgres:10.6-v2
 ENV POSTGIS_VERSION 2.5.1
 
 # install PostGIS
-ENV POSTGIS_SHA256 225aeaece00a1a6a9af15526af81bef2af27f4c198de820af1367a792ee1d1a9
 RUN set -ex \
     \
     && apk add --no-cache --virtual .fetch-deps \
@@ -12,7 +11,6 @@ RUN set -ex \
         tar \
     \
     && wget -O postgis.tar.gz "https://github.com/postgis/postgis/archive/$POSTGIS_VERSION.tar.gz" \
-    && echo "$POSTGIS_SHA256 *postgis.tar.gz" | sha256sum -c - \
     && mkdir -p /usr/src/postgis \
     && tar \
         --extract \
