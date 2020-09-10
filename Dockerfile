@@ -1,7 +1,5 @@
 FROM postgres:11.3-alpine
 
-MAINTAINER Ivan Muratov, binakot@gmail.com
-
 # https://postgis.net/docs/manual-2.5/postgis_installation.html
 ENV POSTGIS_VERSION 2.5.2
 ENV POSTGIS_SHA256 225aeaece00a1a6a9af15526af81bef2af27f4c198de820af1367a792ee1d1a9
