@@ -32,10 +32,10 @@ RUN set -ex \
         clang-dev \
         g++ \
         gcc \
-        # gdal-dev \
-        # geos-dev \
-        # llvm10-dev \
-        # proj-dev \
+        gdal \
+        geos \
+        llvm10 \
+        proj \
         protobuf-c-dev \
     && cd /usr/src/postgis \
     && ./autogen.sh \
