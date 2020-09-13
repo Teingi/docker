@@ -23,14 +23,14 @@ RUN set -ex \
         autoconf \
         automake \
         g++ \
-        gdal-dev \
-        geos-dev \
+        # gdal-dev \
+        # geos-dev \
         json-c-dev \
         libtool \
         libxml2-dev \
         make \
         perl \
-        proj-dev \
+        # proj-dev \
         protobuf-c-dev \
     \
     && cd /usr/src/postgis \
@@ -48,7 +48,7 @@ RUN set -ex \
         --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
         geos \
         gdal \
-        proj4 \
+        proj \
         protobuf-c \
     && cd / \
     && rm -rf /usr/src/postgis \
