@@ -1,7 +1,9 @@
-FROM kubedb/postgres:10.6-v2
+FROM postgres:10-alpine
 
-ENV POSTGIS_VERSION 3.0.2
-ENV POSTGIS_SHA256 2d4eb79ea9af1257320922a8a7d2663d37189c805746e975a5951ee6dc5ac4ef
+LABEL maintainer="PostGIS Project - https://postgis.net"
+
+ENV POSTGIS_VERSION 2.5.5
+ENV POSTGIS_SHA256 24b15ee36f3af02015da0e92a18f9046ea0b4fd24896196c8e6c2aa8e4b56baa
 
 RUN set -ex \
     \
@@ -32,10 +34,10 @@ RUN set -ex \
         clang-dev \
         g++ \
         gcc \
-        gdal \
-        geos \
-        llvm10 \
-        proj \
+        gdal-dev \
+        geos-dev \
+        llvm10-dev \
+        proj-dev \
         protobuf-c-dev \
     && cd /usr/src/postgis \
     && ./autogen.sh \
