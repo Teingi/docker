@@ -30,15 +30,14 @@ RUN set -ex \
         libxml2-dev \
         make \
         perl \
-        # proj-dev \
+        proj4 \
         protobuf-c-dev \
     \
     && cd /usr/src/postgis \
     && ./autogen.sh \
 # configure options taken from:
 # https://anonscm.debian.org/cgit/pkg-grass/postgis.git/tree/debian/rules?h=jessie
-    && ./configure \
-#       --with-gui \
+    && ./configure -prefix=/usr/local/postgis --with-pgsql=/usr/local/pgsql/bin/pg_config --with-proj=/usr/local/proj4 --with-geos=/usr/local/geos/bin/geos-config \
     && make \
     && make install \
     && apk add --no-cache --virtual .postgis-rundeps \
