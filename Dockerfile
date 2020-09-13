@@ -32,9 +32,9 @@ RUN set -ex \
         clang-dev \
         g++ \
         gcc \
-        gdal-dev \
-        geos-dev \
-        llvm10-dev \
+        # gdal-dev \
+        # geos-dev \
+        # llvm10-dev \
         proj-dev \
         protobuf-c-dev \
     && cd /usr/src/postgis \
