@@ -30,16 +30,9 @@ RUN set -ex \
         libxml2-dev \
         make \
         perl \
-        proj4 \
+        proj \
         protobuf-c-dev \
     \
-    && cd /usr/src/postgis \
-    && ./autogen.sh \
-# configure options taken from:
-# https://anonscm.debian.org/cgit/pkg-grass/postgis.git/tree/debian/rules?h=jessie
-    && ./configure -prefix=/usr/local/postgis --with-pgsql=/usr/local/pgsql/bin/pg_config --with-proj=/usr/local/proj4 --with-geos=/usr/local/geos/bin/geos-config \
-    && make \
-    && make install \
     && apk add --no-cache --virtual .postgis-rundeps \
         json-c \
     && apk add --no-cache --virtual .postgis-rundeps-edge \
@@ -47,8 +40,14 @@ RUN set -ex \
         --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
         geos \
         gdal \
-        proj \
         protobuf-c \
+    && cd /usr/src/postgis \
+    && ./autogen.sh \
+# configure options taken from:
+# https://anonscm.debian.org/cgit/pkg-grass/postgis.git/tree/debian/rules?h=jessie
+    && ./configure -prefix=/usr/local/postgis --with-pgsql=/usr/local/pgsql/bin/pg_config --with-proj=/usr/local/proj --with-geos=/usr/local/geos/bin/geos-config \
+    && make \
+    && make install \
     && cd / \
     && rm -rf /usr/src/postgis \
     && apk del .fetch-deps .build-deps .build-deps-edge
