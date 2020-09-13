@@ -1,4 +1,4 @@
-FROM postgres:10-alpine
+FROM kubedb/postgres:10.6-v2
 
 LABEL maintainer="PostGIS Project - https://postgis.net"
 
