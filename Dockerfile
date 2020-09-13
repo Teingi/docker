@@ -35,7 +35,7 @@ RUN set -ex \
         # gdal-dev \
         # geos-dev \
         # llvm10-dev \
-        proj-dev \
+        # proj-dev \
         protobuf-c-dev \
     && cd /usr/src/postgis \
     && ./autogen.sh \
