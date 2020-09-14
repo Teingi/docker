@@ -1,7 +1,5 @@
 FROM postgres:10.6-alpine
 
-LABEL maintainer="PostGIS Project - https://postgis.net"
-
 ENV POSTGIS_VERSION 2.5.5
 ENV POSTGIS_SHA256 24b15ee36f3af02015da0e92a18f9046ea0b4fd24896196c8e6c2aa8e4b56baa
 
