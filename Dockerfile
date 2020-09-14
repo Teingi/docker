@@ -32,11 +32,14 @@ RUN set -ex \
         clang-dev \
         g++ \
         gcc \
+    && apk add --no-cache --virtual .build-deps-edge \
+    --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
+    --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
         gdal-dev \
         geos-dev \
-        llvm10-dev \
-        proj-dev \
+        proj4-dev \
         protobuf-c-dev \
+        llvm10-dev \
     && cd /usr/src/postgis \
     && ./autogen.sh \
 # configure options taken from:
